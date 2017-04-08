@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link href="css/xinshou.css" rel="stylesheet" type="text/css">
+<body>
+<div class="xszy-box">
+    <div class="xszy-tab" id="xszyTab">
+        <ul>
+            <li class="">
+                <span class="xt-num">①</span>注册
+                <div class="xt-bg"></div>
+                <div class="right-arrow"></div>
+                <!--<img src="img/s200.png" class="xs-topic">-->
+            </li>
+            <li class="">
+                <span class="xt-num">②</span>实名
+                <div class="xt-bg"></div>
+                <div class="left-arrow"></div>
+                <div class="right-arrow"></div>
+            </li>
+            <li class="active">
+                <span class="xt-num">③</span>绑卡充值
+                <div class="xt-bg"></div>
+                <div class="left-arrow"></div>
+                <div class="right-arrow"></div>
+            </li>
+            <li>
+                <span class="xt-num">④</span>投资
+                <div class="xt-bg"></div>
+                <div class="left-arrow"></div>
+                <div class="right-arrow"></div>
+            </li>
+            <li class="last">
+                <span class="xt-num">⑤</span>赚取收益
+                <div class="xt-bg"></div>
+                <div class="left-arrow"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="cl"></div>
+    <div class="xszy-main">
+        <div class="xszy-item xi1" style="display: none;">
+            <div class="item-list">
+                <ul style="width: 1700px; margin-left: -850px;">
+                    <li><img src="img/a11.jpg"></li>
+                    <li><img src="img/a11.jpg"></li>
+                </ul>
+            </div>
+            <div class="cl"></div>
+            <div class="circle">
+                <a href="javascript:void(0);" class="">1</a>
+                <a href="javascript:void(0);" class="active">2</a>
+            </div>
+            <a href="javascript:void(0);" class="prev"></a>
+            <a href="javascript:void(0);" class="next"></a>
+        </div>
+        <div class="xszy-item hide xi2" style="display: none;">
+            <div class="item-list">
+                <ul style="width: 4250px; margin-left: 0px;">
+                    <li><img src="img/a21.jpg"></li>
+                    <li><img src="img/a21.jpg"></li>
+                    <li><img src="img/a21.jpg"></li>
+                    <li><img src="img/a21.jpg"></li>
+                    <li><img src="img/a21.jpg"></li>
+                </ul>
+            </div>
+            <div class="cl"></div>
+            <div class="circle">
+                <a href="javascript:void(0);" class="active">1</a>
+                <a href="javascript:void(0);" class="">2</a>
+                <a href="javascript:void(0);" class="">3</a>
+                <a href="javascript:void(0);" class="">4</a>
+                <a href="javascript:void(0);" class="">5</a>
+            </div>
+            <a href="javascript:void(0);" class="prev"></a>
+            <a href="javascript:void(0);" class="next"></a>
+        </div>
+        <div class="xszy-item hide xi3" style="display: block;">
+            <div class="item-list">
+                <ul style="width: 3400px; margin-left: -2550px;">
+                    <li><img src="img/c11.jpg"></li>
+                    <li><img src="img/c11.jpg"></li>
+                    <li><img src="img/c11.jpg"></li>
+                    <li><img src="img/c11.jpg"></li>
+                </ul>
+            </div>
+            <div class="cl"></div>
+            <div class="circle">
+                <a href="javascript:void(0);" class="">1</a>
+                <a href="javascript:void(0);" class="">2</a>
+                <a href="javascript:void(0);" class="">3</a>
+                <a href="javascript:void(0);" class="active">4</a>
+            </div>
+            <a href="javascript:void(0);" class="prev"></a>
+            <a href="javascript:void(0);" class="next"></a>
+        </div>
+        <div class="xszy-item hide xi4" style="display: none;">
+            <div class="item-list">
+                <ul style="width: 3400px;">
+                    <li><img src="img/d1.jpg"></li>
+                    <li><img src="img/d1.jpg"></li>
+                    <li><img src="img/d1.jpg"></li>
+                    <li><img src="img/d1.jpg"></li>
+                </ul>
+            </div>
+            <div class="cl"></div>
+            <div class="circle">
+                <a href="javascript:void(0);" class="active">1</a>
+                <a href="javascript:void(0);">2</a>
+                <a href="javascript:void(0);">3</a>
+                <a href="javascript:void(0);">4</a>
+            </div>
+            <a href="javascript:void(0);" class="prev"></a>
+            <a href="javascript:void(0);" class="next"></a>
+        </div>
+        <div class="xszy-item hide xi5" style="display: none;">
+            <div class="item-list">
+                <ul style="width: 850px;">
+                    <li><img src="img/e1.jpg"></li>
+                </ul>
+            </div>
+            <div class="cl"></div>
+            <div class="circle hide">
+                <a href="javascript:void(0);" class="active">1</a>
+            </div>
+            <a href="javascript:void(0);" class="prev"></a>
+            <a href="javascript:void(0);" class="next"></a>
+        </div>
+        <div class="cl"></div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript">
+    /*计算UL宽度*/
+    for(var a = 1;a <= $(".xszy-item").length;a++){
+        for(var i = 0;i < $(".xi"+a + " ul li").length;i++){
+            $(".xi"+a+" ul").width($(".xi"+a+" ul").children("li").length*850);
+        }
+    }
+    $("#xszyTab li").click(function(){
+        $("#xszyTab li").removeClass("active").eq($(this).index()).addClass("active");
+        $(".xszy-item").hide();
+        $(".xi"+($(this).index()+1)).fadeIn();
+        $(".xszy-item").eq($(this).index()).children(".item-list").children("ul").css({"marginLeft":0});
+        $(".circle").eq($(this).index()).children("a").removeClass("active").first().addClass("active");
+    });
+    $(".prev").click(function(){
+        var currLength = $(this).parent(".xszy-item").children(".item-list").children("ul").children("li").length-1;
+        var tabLi = $("#xszyTab li.active").index();
+        var currIndex =  $(this).prev(".circle").children("a.active").index();
+        if(currIndex == 0){
+            var tabIndex = $("#xszyTab li.active").index();
+            if(tabIndex != 0){
+                var prevLength = $(".xszy-item").eq(tabLi-1).children(".item-list").children("ul").children("li").length;
+                $(".xszy-item").eq(tabLi-1).children(".item-list").children("ul").css({"marginLeft":(-prevLength+1)*850});
+                $(".circle").eq(tabLi-1).children("a").removeClass("active").last().addClass("active");
+                $("#xszyTab li").removeClass("active").eq(tabIndex-1).addClass("active");
+                $(".xszy-item").hide().eq(tabLi-1).fadeIn();
+            }else{
+                layer.msg('亲，已经是第一个了哦 O(∩_∩)O~~', 3, 9);
+                return;
+            }
+        }else{
+            $(this).parent(".xszy-item").children(".item-list").children("ul").animate({"marginLeft":(-currIndex+1)*850});
+            $(this).prev($(".circle")).children("a").removeClass("active").eq(currIndex-1).addClass("active");
+        }
+    });
+    $(".next").click(function(){
+        var currLength = $(this).parent(".xszy-item").children(".item-list").children("ul").children("li").length-1;
+        var tabLi = $("#xszyTab li.active").index();
+        var currIndex =  $(this).prev().prev(".circle").children("a.active").index();
+        if(currIndex == currLength){
+            var tabIndex = $("#xszyTab li.active").index();
+            if(tabIndex != 4){
+                $(".xszy-item").eq(tabLi+1).children(".item-list").children("ul").css({"marginLeft":"0px"});
+                $(".circle").eq(tabLi+1).children("a").removeClass("active").first().addClass("active");
+                $("#xszyTab li").removeClass("active").eq(tabIndex+1).addClass("active");
+                $(".xszy-item").hide().eq(tabLi+1).fadeIn();
+            }else{
+                layer.msg('没有了 /(ㄒoㄒ)/~~');
+            }
+        }else{
+            $(this).parent(".xszy-item").children(".item-list").children("ul").animate({"marginLeft":(-currIndex-1)*850});
+            $(this).prev().prev($(".circle")).children("a").removeClass("active").eq(currIndex+1).addClass("active");
+        }
+    });
+    $(".circle a").click(function(){
+        $(this).addClass("active").siblings("a").removeClass("active");
+        $(this).parent().parent(".xszy-item").children(".item-list").children("ul").animate({"marginLeft":(-$(this).index())*850});
+    });
+</script>
+
+
+<!--<script type="text/javascript">-->
+    <!--function scrollMethod() {-->
+        <!--var scrollTop = $(window).scrollTop();-->
+        <!--scrollTop > 100 ? $("#topBtn").fadeIn(200).css("display", "block") : $(-->
+                <!--"#topBtn").fadeOut(200);-->
+    <!--}-->
+    <!--$('#topBtn').click(function(e) {-->
+        <!--$('html,body').animate({-->
+            <!--scrollTop : 0-->
+        <!--}, 500);-->
+    <!--});-->
+    <!--$("#rightNav li").hover(function() {-->
+        <!--$(this).addClass("active");-->
+    <!--}, function() {-->
+        <!--$(this).removeClass("active");-->
+    <!--});-->
+    <!--$(window).scroll(function() {-->
+        <!--scrollMethod();-->
+    <!--});-->
+    <!--scrollMethod();-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--$(function() {-->
+        <!--var $bottomTools = $('.ReturnTop');-->
+        <!--var $qrTools = $('.wechat');-->
+        <!--var qrImg = $('.wechat_img');-->
+        <!--$(window).scroll(-->
+                <!--function() {-->
+                    <!--var scrollHeight = $(document).height();-->
+                    <!--var scrollTop = $(window).scrollTop();-->
+                    <!--var $windowHeight = $(window).innerHeight();-->
+                    <!--scrollTop > 100 ? $("#ScrollUp").fadeIn(200).css("display",-->
+                            <!--"block") : $("#ScrollUp").fadeOut(200);-->
+                    <!--$bottomTools.css("bottom",-->
+                            <!--scrollHeight - scrollTop > $windowHeight ? 300-->
+                                    <!--: $windowHeight + scrollTop + 300-->
+                            <!-- - scrollHeight);-->
+                <!--});-->
+        <!--$('#ScrollUp').click(function(e) {-->
+            <!--e.preventDefault();-->
+            <!--$('html,body').animate({-->
+                <!--scrollTop : 0-->
+            <!--});-->
+        <!--});-->
+        <!--$qrTools.hover(function() {-->
+            <!--qrImg.fadeIn();-->
+        <!--}, function() {-->
+            <!--qrImg.fadeOut();-->
+        <!--});-->
+        <!--$('input, textarea').placeholder();-->
+    <!--});-->
+<!--</script>-->
+
+
+
+</html>
